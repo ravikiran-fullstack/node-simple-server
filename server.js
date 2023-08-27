@@ -3,6 +3,7 @@ const PORT = process.env.PORT || 3500;
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
 const corsOptions = require('./config/corsOptions');
@@ -26,6 +27,9 @@ app.use(express.urlencoded({ extended: false }));
 // Built in middleware for JSON data
 app.use(express.json());
 
+// Middleware for Cookies
+app.use(cookieParser());
+
 // Built in middleware for serving static files and data
 app.use(express.static(path.join(__dirname, '/public')));
 
@@ -36,6 +40,8 @@ app.use('/employees', require('./routes/api/employees'));
 app.use('/register', require('./routes/register'));
 
 app.use('/login', require('./routes/login'));
+
+app.use('/refresh', require('./routes/refresh'));
 
 // route handlers
 app.get(

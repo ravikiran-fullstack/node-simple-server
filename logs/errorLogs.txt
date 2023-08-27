@@ -218,3 +218,14 @@
     at next (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\express\lib\router\index.js:280:10)
     at Function.handle (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\express\lib\router\index.js:175:3)
     at router (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\express\lib\router\index.js:47:12)
+20230825	19:34:36	28617593-6e0d-4726-9aac-0f34d6ca7fb2	Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:405:5)
+    at ServerResponse.setHeader (node:_http_outgoing:648:11)
+    at ServerResponse.header (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\express\lib\response.js:278:15)
+    at D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\controllers\refreshTokenController.js:34:9
+    at D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\jsonwebtoken\verify.js:261:12
+    at getSecret (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\jsonwebtoken\verify.js:97:14)
+    at module.exports [as verify] (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\node_modules\jsonwebtoken\verify.js:101:10)
+    at handleRefreshToken (D:\Learnings\NodeJS\YouTube\DaveGray\Lesson-9 - Express - MVC - Pattern\controllers\refreshTokenController.js:23:7)

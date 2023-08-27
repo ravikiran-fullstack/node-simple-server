@@ -8,9 +8,12 @@ const {
   deleteEmployee,
   getEmployee,
 } = require('../../controllers/employeesController');
+
+const verifyJWT = require('../../middleware/verifyJWT');
+
 router
   .route('/')
-  .get(getAllEmployees)
+  .get(verifyJWT, getAllEmployees)
   .post(createNewEmployees)
   .put(updateEmployee)
   .delete(deleteEmployee);

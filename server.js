@@ -43,6 +43,8 @@ app.use('/login', require('./routes/login'));
 
 app.use('/refresh', require('./routes/refresh'));
 
+app.use('/logout', require('./routes/logout'));
+
 // route handlers
 app.get(
   '/hello(.html)?',

@@ -25,7 +25,10 @@ const authenticateUser = (req, res) => {
         // create JWT
         const accessToken = jwt.sign(
           {
-            username: user.username,
+            userInfo: {
+              username: user.username,
+              roles: user.roles,
+            },
           },
           process.env.ACCESS_TOKEN_SECRET,
           {
